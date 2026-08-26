@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Maison N'Diaye</title>
+<meta name="description" content="Contactez Maison N'Diaye pour un conseil personnalisé sur votre projet de carrelage et sanitaires haut de gamme.">
+<link rel="stylesheet" href="assets/css/style.css?v=2">
+</head>
+<body>
+
+<header class="site-header light-mode">
+  <a href="index.html" class="logo">
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="2" width="25.5" height="25.5" transform="rotate(45 20 20)" stroke="currentColor" stroke-width="1"/>
+      <rect x="20" y="9" width="15.5" height="15.5" transform="rotate(45 20 20)" stroke="currentColor" stroke-width="1"/>
+    </svg>
+    <span class="logo-text">MAISON N'DIAYE<small>Finition &amp; Prestige Européen</small></span>
+  </a>
+  <nav class="main-nav">
+    <a href="index.html" class="nav-link">Accueil</a>
+    <a href="carrelage.html" class="nav-link">Carrelage</a>
+    <a href="sanitaires.html" class="nav-link">Sanitaires</a>
+    <a href="realisations.html" class="nav-link">Réalisations</a>
+    <a href="qui-sommes-nous.html" class="nav-link">Qui sommes-nous</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<section class="page-hero" style="height:36vh;min-height:260px;">
+  <img src="assets/catalog/origin-cedar-ambiance.jpg" alt="Contact Maison N'Diaye">
+  <div class="page-hero-content">
+    <p class="eyebrow" style="color:#E8C874;">Contact</p>
+    <h1>Parlons de votre projet</h1>
+  </div>
+</section>
+
+<section>
+  <div class="container contact-layout">
+    <div class="contact-info reveal">
+      <p class="eyebrow">Coordonnées</p>
+      <h2 class="section-title" style="margin-bottom:20px;">Nous joindre</h2>
+      <p class="section-lede" style="margin-bottom:20px;">Coordonnées en cours de finalisation — elles seront mises à jour ici prochainement.</p>
+
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2c0 1-1 2-2 2C10 19 4 13 4 5z"/></svg>
+        <div><strong>Téléphone</strong><div class="value">À compléter</div></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        <div><strong>Email</strong><div class="value">À compléter</div></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+        <div><strong>Showroom</strong><div class="value">Adresse à compléter</div></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><strong>Fonctionnement</strong><div class="value">Vente sur commande — conseil personnalisé et accompagnement dans le calcul des quantités selon votre projet.</div></div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <p class="eyebrow">Formulaire</p>
+      <h2 class="section-title" style="margin-bottom:26px;">Décrivez votre projet</h2>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Nom complet</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="project">Type de projet</label>
+          <select id="project" name="project">
+            <option>Villa</option>
+            <option>Appartement</option>
+            <option>Hôtel</option>
+            <option>Projet professionnel</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn-gold btn">Envoyer</button>
+        <p id="form-feedback" style="display:none;margin-top:18px;color:var(--color-primary);font-size:0.9rem;"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <span class="logo-text">MAISON N'DIAYE</span>
+      <p>Finition &amp; Prestige Européen. Carrelages importés d'Espagne et équipements sanitaires sélectionnés en France pour vos projets haut de gamme.</p>
+    </div>
+    <div>
+      <h5>Carrelage</h5>
+      <ul>
+        <li><a href="carrelage.html#pierre">Pierre</a></li>
+        <li><a href="carrelage.html#marbre">Marbre</a></li>
+        <li><a href="carrelage.html#contemporain">Contemporain</a></li>
+        <li><a href="carrelage.html#bois">Bois</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Sanitaires</h5>
+      <ul>
+        <li><a href="sanitaires.html#bain-douche">Bain &amp; Douche</a></li>
+        <li><a href="sanitaires.html#vasques-mobilier">Vasques &amp; Mobilier</a></li>
+        <li><a href="sanitaires.html#robinetterie">Robinetterie</a></li>
+        <li><a href="sanitaires.html#wc">WC</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul><li><a href="contact.html">Formulaire de contact</a></li></ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Maison N'Diaye. Tous droits réservés.</span>
+    <span>Finition &amp; Prestige Européen</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js?v=2"></script>
+</body>
+</html>
+
