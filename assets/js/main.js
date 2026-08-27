@@ -65,18 +65,17 @@ if ('IntersectionObserver' in window && revealEls.length) {
 const subnavLinks = document.querySelectorAll('.subnav a[href^="#"]');
 if (subnavLinks.length) {
   const targets = Array.from(subnavLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-  const io2 = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const id = '#' + entry.target.id;
-      const link = document.querySelector(`.subnav a[href="${id}"]`);
-      if (!link) return;
-      if (entry.isIntersecting) {
-        subnavLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-40% 0px -50% 0px' });
-  targets.forEach(t => io2.observe(t));
+  const subnavHeight = document.querySelector('.subnav')?.offsetHeight || 0;
+  const refLine = subnavHeight + 40;
+  const updateActive = () => {
+    let current = targets[0];
+    for (const t of targets) {
+      if (t.getBoundingClientRect().top - refLine <= 0) current = t;
+    }
+    subnavLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
+  };
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
 }
 
 // Contact form: envoi via Formspree (https://formspree.io)
