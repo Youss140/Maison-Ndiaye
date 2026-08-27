@@ -65,9 +65,9 @@ if ('IntersectionObserver' in window && revealEls.length) {
 const subnavLinks = document.querySelectorAll('.subnav a[href^="#"]');
 if (subnavLinks.length) {
   const targets = Array.from(subnavLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-  const subnavHeight = document.querySelector('.subnav')?.offsetHeight || 0;
-  const refLine = subnavHeight + 40;
+  const subnavEl = document.querySelector('.subnav');
   const updateActive = () => {
+    const refLine = (subnavEl?.getBoundingClientRect().bottom || 0) + 20;
     let current = targets[0];
     for (const t of targets) {
       if (t.getBoundingClientRect().top - refLine <= 0) current = t;

@@ -533,7 +533,7 @@ section { padding: 100px 0; }
 /* ---------- Sub nav (anchor pills) ---------- */
 .subnav {
   position: sticky;
-  top: 0;
+  top: 64px;
   z-index: 100;
   background: rgba(250,245,242,.96);
   backdrop-filter: blur(8px);
