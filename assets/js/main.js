@@ -79,16 +79,41 @@ if (subnavLinks.length) {
   targets.forEach(t => io2.observe(t));
 }
 
-// Contact form: front-end only stub (no backend configured yet)
+// Contact form: envoi via Formspree (https://formspree.io)
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xyeygazq';
+
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const feedback = document.getElementById('form-feedback');
-    if (feedback) {
-      feedback.textContent = "Merci pour votre message. Ce formulaire est en cours de configuration : contactez-nous directement en attendant via les coordonnées ci-contre.";
-      feedback.style.display = 'block';
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+    if (submitBtn) submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (feedback) {
+        feedback.style.display = 'block';
+        if (response.ok) {
+          feedback.textContent = "Merci pour votre message, nous revenons vers vous rapidement.";
+          contactForm.reset();
+        } else {
+          feedback.textContent = "Une erreur est survenue. Contactez-nous directement via les coordonnées ci-contre.";
+        }
+      }
+    } catch (err) {
+      if (feedback) {
+        feedback.style.display = 'block';
+        feedback.textContent = "Une erreur est survenue. Contactez-nous directement via les coordonnées ci-contre.";
+      }
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
     }
-    contactForm.reset();
   });
 }
